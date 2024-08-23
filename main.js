@@ -20,7 +20,7 @@ console.info(`1. Calculando o MDC entre a(${a}) e b(${b}) = `, calcMDC(a, b), '\
 // Fim Item 1
 
 // Início Item 2
-function getGtLtIndex(arr) {
+function getMaiorMenorIndex(arr) {
     let max = arr[0];
     let min = arr[0];
     let maxIndex = 0;
@@ -54,12 +54,12 @@ let vetorStr = vetor.join(', ');
 console.log(`2.
   Dado o seguinte array numérico [${vetorStr}].
   Qual é o índice do maior valor e o índice do menor valor?
-  Resposta:`, getGtLtIndex(vetor), '\n');
+  Resposta:`, getMaiorMenorIndex(vetor), '\n');
 // Fim Item 2
 
 
 /// Início Item 3
-function somaMultiploAbaixo(mult1, mult2, numero) {
+function sumMultiploAbaixo(mult1, mult2, numero) {
     let soma = 0;
     for (let i = 1; i < numero; i++) {
         if (i % mult1 === 0 || i % mult2 === 0) {
@@ -73,5 +73,5 @@ let mult1 = 5;
 let mult2 = 7;
 let numero = 1000;
 
-console.log(`3. A soma de todos os múltiplos de ${mult1} ou ${mult2} abaixo de ${numero} é:`, somaMultiploAbaixo(mult1, mult2, numero), '\n');
+console.log(`3. A soma de todos os múltiplos de ${mult1} ou ${mult2} abaixo de ${numero} é:`, sumMultiploAbaixo(mult1, mult2, numero), '\n');
 //Fim Item 3
