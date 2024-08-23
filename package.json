@@ -1,0 +1,11 @@
+{
+  "name": "ebac_modulo_20",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "main": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
