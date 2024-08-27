@@ -1,77 +1,33 @@
-console.clear();
+import calc_mdc from './modules/calc_mdc.js';
+import get_index from './modules/get_index.js';
+import sum_multiplos from './modules/sum_multiplos.js';
 
-// Início Item 1
-function calcMDC(a, b) {
-    
-    a = Math.abs(a);
-    b = Math.abs(b);
-    
-    while (b !== 0) {
-        let aux = b;
-        b = a % b;
-        a = aux;
-    }
-    return a;
-}
-let a = 5;
-let b = 0;
+export default function main() {
+    console.clear();
 
-console.info(`1. Calculando o MDC entre a(${a}) e b(${b}) = `, calcMDC(a, b), '\n');
-// Fim Item 1
-
-// Início Item 2
-function getMaiorMenorIndex(arr) {
-    let max = arr[0];
-    let min = arr[0];
-    let maxIndex = 0;
-    let minIndex = 0;
-    
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-            maxIndex = i;
-        }
-        if (arr[i] < min) {
-            min = arr[i];
-            minIndex = i;
-        }
-    }
-    return {
-        maior: {
-            "index": maxIndex,
-            "valor": max
-        },
-        menor: {
-            "index": minIndex,
-            "valor": min
-        }
-    };
+    calc_mdc_test();
+    get_index_test();
+    sum_multiplos_test();
 }
 
-let vetor = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3];
-let vetorStr = vetor.join(', ');
-
-console.log(`2.
-  Dado o seguinte array numérico [${vetorStr}].
-  Qual é o índice do maior valor e o índice do menor valor?
-  Resposta:`, getMaiorMenorIndex(vetor), '\n');
-// Fim Item 2
-
-
-/// Início Item 3
-function sumMultiploAbaixo(mult1, mult2, numero) {
-    let soma = 0;
-    for (let i = 1; i < numero; i++) {
-        if (i % mult1 === 0 || i % mult2 === 0) {
-            soma += i;
-        }
-    }
-    return soma;
+function calc_mdc_test(){
+    let a = 9;
+    let b = 15;
+    console.info(`Calculando o MDC entre a(${a}) e b(${b}) = `, calc_mdc(a, b), '\n');
 }
 
-let mult1 = 5;
-let mult2 = 7;
-let numero = 1000;
+function get_index_test(){
+    let vetor = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3];
+    let vetorStr = vetor.join(', ');
+    console.info(`O índice do maior valor e o índice do menor valor do vetor [${vetorStr}] são:`, get_index(vetor), '\n');
+}
 
-console.log(`3. A soma de todos os múltiplos de ${mult1} ou ${mult2} abaixo de ${numero} é:`, sumMultiploAbaixo(mult1, mult2, numero), '\n');
-//Fim Item 3
+function sum_multiplos_test(){
+    let mult1 = 5;
+    let mult2 = 7;
+    let numero = 1000;
+
+    console.info(`A soma de todos os múltiplos de ${mult1} ou ${mult2} abaixo de ${numero} é:`, sum_multiplos(mult1, mult2, numero), '\n');
+}
+
+main();
